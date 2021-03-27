@@ -19,20 +19,16 @@ class MainActivity : AppCompatActivity() {
         //IDからツールバーがインポート宣言により取得されるので、ID名でアクションバーのサポートを依頼
         setSupportActionBar(toolbar)
         //fabにクリックリスナーを登録
-        fab.setOnClickListener { _->
+        fab.setOnClickListener { _ ->
             //ログイン済みのユーザを取得する
-            val user=FirebaseAuth.getInstance().currentUser
+            val user = FirebaseAuth.getInstance().currentUser
             //ログインしていなければログイン画面に移行させる
-            if (user==null){
-                val intent=Intent(applicationContext,LoginActivity::class.java)
+            if (user == null) {
+                val intent = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent)
             }
         }
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
