@@ -1,18 +1,33 @@
 package jp.techacademy.satoshi.tanaka.qaapp
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.google.firebase.auth.FirebaseAuth
+//findViewByID()を呼び出さずに該当Viewを取得するインポート宣言↓
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+        //IDからツールバーがインポート宣言により取得されるので、ID名でアクションバーのサポートを依頼
+        setSupportActionBar(toolbar)
+        //fabにクリックリスナーを登録
+        fab.setOnClickListener { _->
+            //ログイン済みのユーザを取得する
+            val user=FirebaseAuth.getInstance().currentUser
+            //ログインしていなければログイン画面に移行させる
+            if (user==null){
+                val intent=intent(applicationContext,LoginActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
