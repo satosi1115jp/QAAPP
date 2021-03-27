@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             val user=FirebaseAuth.getInstance().currentUser
             //ログインしていなければログイン画面に移行させる
             if (user==null){
-                val intent=intent(applicationContext,LoginActivity::class.java)
+                val intent=Intent(applicationContext,LoginActivity::class.java)
                 startActivity(intent)
             }
         }
