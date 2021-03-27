@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "483412701893",
+    "project_id": "qaap-5f73e",
+    "storage_bucket": "qaap-5f73e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483412701893:android:66c343928bcca5e925f6ac",
+        "android_client_info": {
+          "package_name": "jp.techacademy.satoshi.tanaka.qaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483412701893-ucmj5neupbsrvalb4fadfoaurq2b4nsp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLFNCIhseWEiSqWRAXqc4urGdylb4hFtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483412701893-ucmj5neupbsrvalb4fadfoaurq2b4nsp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
